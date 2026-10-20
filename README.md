@@ -23,3 +23,5 @@ make demo
 5. Decisions and limits: Evaluation uses seeded synthetic history, including permanently failing controls. The policy proposes quarantine after repeated mixed outcomes; the report specifies seven-day expiry and nightly execution, but does not modify an external test runner. Cost is modeled from synthetic durations. The flake-report GitHub Action posts the report to same-repository PRs; fork PRs are skipped because their tokens cannot write comments. See evidence/comment.md and the workflow.
 
 6. Next: Import real JUnit rerun history and enforce quarantine expiry in a test scheduler.
+
+PR reporting demonstration uses synthetic history only.
