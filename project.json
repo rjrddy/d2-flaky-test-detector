@@ -1,0 +1,27 @@
+{
+  "id": "D2",
+  "name": "Flaky-test detector",
+  "problem": "Identify flaky outcomes from same-revision reruns without quarantining permanent failures.",
+  "results": [
+    [
+      "Injected flakes detected",
+      "detected",
+      ""
+    ],
+    [
+      "Precision",
+      "precision",
+      ""
+    ],
+    [
+      "Recall",
+      "recall",
+      ""
+    ]
+  ],
+  "diagram": "CIHistory --> SameRevisionReruns --> EvidencePolicy --> QuarantineProposal --> PRComment",
+  "limits": "Evaluation uses seeded synthetic history, including permanently failing controls. The policy proposes quarantine after repeated mixed outcomes; the report specifies seven-day expiry and nightly execution, but does not modify an external test runner. Cost is modeled from synthetic durations. The flake-report GitHub Action posts the report to same-repository PRs; fork PRs are skipped because their tokens cannot write comments. See evidence/comment.md and the workflow.",
+  "next": "Import real JUnit rerun history and enforce quarantine expiry in a test scheduler.",
+  "status": "done",
+  "command": "make demo"
+}

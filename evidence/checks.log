@@ -1,0 +1,42 @@
+/Users/rajreddy/dev/outreach/projects/d2-flaky-test-detector/.venv/bin/python -m ruff check src tests
+All checks passed!
+/Users/rajreddy/dev/outreach/projects/d2-flaky-test-detector/.venv/bin/python -m ruff format --check src tests
+2 files already formatted
+/Users/rajreddy/dev/outreach/projects/d2-flaky-test-detector/.venv/bin/python -m pytest -q
+....                                                                     [100%]
+4 passed in 0.07s
+/Users/rajreddy/dev/outreach/projects/d2-flaky-test-detector/.venv/bin/python src/flakes.py > evidence/bench.json
+{
+  "injected_flakes": 20,
+  "detected": 20,
+  "precision": 1.0,
+  "recall": 1.0,
+  "modeled_rerun_seconds_avoided": 21.868336273520455,
+  "quarantine": [
+    "test_0",
+    "test_1",
+    "test_10",
+    "test_11",
+    "test_12",
+    "test_13",
+    "test_14",
+    "test_15",
+    "test_16",
+    "test_17",
+    "test_18",
+    "test_19",
+    "test_2",
+    "test_3",
+    "test_4",
+    "test_5",
+    "test_6",
+    "test_7",
+    "test_8",
+    "test_9"
+  ],
+  "policy": {
+    "min_mixed_outcomes": 2,
+    "expires_days": 7,
+    "continues_nightly": true
+  }
+}
